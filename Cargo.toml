@@ -1,0 +1,6 @@
+[package]
+name = "rust-better-stacktrace"
+version = "0.1.0"
+authors = ["pocari <caffelattenonsugar@gmail.com>"]
+
+[dependencies]

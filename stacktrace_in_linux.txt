@@ -1,0 +1,39 @@
+root@06a3933938e9:/source# RUST_BACKTRACE=1 cargo run
+    Finished debug [unoptimized + debuginfo] target(s) in 0.0 secs
+     Running `target/debug/rust-better-stacktrace`
+xxx
+yyy
+thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libcore/option.rs:323
+stack backtrace:
+   1:     0x558b2e4df1aa - std::sys::imp::backtrace::tracing::imp::write::h3188f035833a2635
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libstd/sys/unix/backtrace/tracing/gcc_s.rs:42
+   2:     0x558b2e4e10df - std::panicking::default_hook::{{closure}}::h6385b6959a2dd25b
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libstd/panicking.rs:349
+   3:     0x558b2e4e0cde - std::panicking::default_hook::he4f3b61755d7fa95
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libstd/panicking.rs:365
+   4:     0x558b2e4e14c7 - std::panicking::rust_panic_with_hook::hf00b8130f73095ec
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libstd/panicking.rs:553
+   5:     0x558b2e4e1304 - std::panicking::begin_panic::h6227f62cb2cdaeb4
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libstd/panicking.rs:515
+   6:     0x558b2e4e1279 - std::panicking::begin_panic_fmt::h173eadd80ae64bec
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libstd/panicking.rs:499
+   7:     0x558b2e4e1207 - rust_begin_unwind
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libstd/panicking.rs:475
+   8:     0x558b2e506ffd - core::panicking::panic_fmt::h3b2d1e30090844ff
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libcore/panicking.rs:69
+   9:     0x558b2e506f34 - core::panicking::panic::h2596388ccef1871c
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libcore/panicking.rs:49
+  10:     0x558b2e4d89f4 - <core::option::Option<T>>::unwrap::hdacdd6cb35717f45
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libcore/macros.rs:21
+  11:     0x558b2e4d8beb - rust_better_stacktrace::main::hfdf401c58b6d709f
+                        at /source/src/main.rs:6
+  12:     0x558b2e4e8dea - __rust_maybe_catch_panic
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libpanic_unwind/lib.rs:98
+  13:     0x558b2e4e19c6 - std::rt::lang_start::h65647f6e36cffdae
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libstd/panicking.rs:434
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libstd/panic.rs:351
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-linux/build/src/libstd/rt.rs:57
+  14:     0x558b2e4d8d02 - main
+  15:     0x7f493fba8b44 - __libc_start_main
+  16:     0x558b2e4d8878 - <unknown>
+  17:                0x0 - <unknown>

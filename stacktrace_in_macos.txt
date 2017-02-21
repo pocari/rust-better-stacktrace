@@ -1,0 +1,21 @@
+% RUST_BACKTRACE=1 cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.0 secs
+     Running `target/debug/rust-better-stacktrace`
+xxx
+yyy
+thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src/libcore/option.rs:323
+stack backtrace:
+   1:        0x10a9bad59 - std::sys::imp::backtrace::tracing::imp::write::h9559bd7cb15d72ad
+   2:        0x10a9bc22e - std::panicking::default_hook::{{closure}}::h4b3f2b69c9ce844d
+   3:        0x10a9bbedb - std::panicking::default_hook::h61d415f2381a7336
+   4:        0x10a9bc5e7 - std::panicking::rust_panic_with_hook::h8e6300d8e8aca457
+   5:        0x10a9bc484 - std::panicking::begin_panic::h08622fbe5a379aac
+   6:        0x10a9bc3f2 - std::panicking::begin_panic_fmt::ha00d3aa9db91f578
+   7:        0x10a9bc357 - rust_begin_unwind
+   8:        0x10a9dca20 - core::panicking::panic_fmt::h58d018e87f211baf
+   9:        0x10a9dc924 - core::panicking::panic::h4e2dc358c3b23d48
+  10:        0x10a9b4634 - <core::option::Option<T>>::unwrap::hd19ecad304e85b2f
+  11:        0x10a9b4808 - rust_better_stacktrace::main::hd6e610e90450cf55
+  12:        0x10a9be05a - __rust_maybe_catch_panic
+  13:        0x10a9bc8a6 - std::rt::lang_start::he28fbf70e98a2b18
+  14:        0x10a9b48f9 - main
